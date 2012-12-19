@@ -1,0 +1,31 @@
+{
+  "name": "noflo-diffbot",
+  "description": "Diffbot service components for the NoFlo flow-based programming environment",
+  "author": "Henri Bergius <henri.bergius@iki.fi>",
+  "version": "0.0.1",
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/bergie/noflo/raw/master/LICENSE"
+  }],
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "dependencies": {
+    "noflo": "0.2.x",
+    "diffbot": "0.1.x"
+  },
+  "devDependencies": {
+    "nodeunit": ">=0.6.0",
+    "coffeelint": "*",
+    "coffee-script": "1.4.x"
+  },
+  "noflo": {
+    "components": {
+      "GetArticle": "./components/GetArticle.coffee"
+    }
+  },
+  "scripts": {
+    "pretest": "./node_modules/.bin/coffeelint -r components",
+    "test": "./node_modules/.bin/nodeunit test"
+  }
+}
