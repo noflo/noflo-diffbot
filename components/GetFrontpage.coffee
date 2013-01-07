@@ -34,6 +34,7 @@ class GetFrontpage extends noflo.AsyncComponent
 
       @outPorts.out.endGroup()
       @outPorts.out.disconnect()
+      callback()
 
   sendArticle: (node) ->
     return unless node.tagName is 'item'

@@ -30,5 +30,6 @@ class GetArticle extends noflo.AsyncComponent
       @outPorts.out.send article
       @outPorts.out.endGroup()
       @outPorts.out.disconnect()
+      callback()
 
 exports.getComponent = -> new GetArticle
