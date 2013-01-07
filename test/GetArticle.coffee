@@ -66,13 +66,15 @@ exports['test reading two URLs'] = (test) ->
   fetched = 0
   out.on 'data', (data) ->
     fetched++
-    expected = expects.shift()
+    expected = {}
+    for expection in expects
+      expected = expection if expection.url is data.url
+    test.ok expected.title
 
     test.ok data, "We need to get an article object"
     test.ok data.html, "Article needs to contain text"
     test.ok data.title, "Article needs to contain a title"
     test.ok data.title.indexOf(expected.title) isnt -1, "Title must look correct"
-    test.equal data.url, expected.url
     test.ok data.type, "Article must have type"
     test.equal data.type, 'article', "Article type must be 'article'"
 
