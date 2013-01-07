@@ -46,3 +46,38 @@ exports['test reading a URL'] = (test) ->
 
   token.send process.env.DIFFBOT_TOKEN
   ins.send 'http://bergie.iki.fi/blog/jolla-sailfish/'
+
+exports['test reading two URLs'] = (test) ->
+  unless process.env.DIFFBOT_TOKEN
+    test.fail null, null, 'No DIFFBOT_TOKEN env variable set'
+    test.done()
+    return
+
+  [c, ins, token, out, err] = setupComponent()
+
+  expects = [
+    title: 'Sailfish OS'
+    url: 'http://bergie.iki.fi/blog/jolla-sailfish/'
+  ,
+    title: 'Create.js in 2013'
+    url: 'http://bergie.iki.fi/blog/createjs-in-2013/'
+  ]
+
+  fetched = 0
+  out.on 'data', (data) ->
+    fetched++
+    expected = expects.shift()
+
+    test.ok data, "We need to get an article object"
+    test.ok data.html, "Article needs to contain text"
+    test.ok data.title, "Article needs to contain a title"
+    test.ok data.title.indexOf(expected.title) isnt -1, "Title must look correct"
+    test.equal data.url, expected.url
+    test.ok data.type, "Article must have type"
+    test.equal data.type, 'article', "Article type must be 'article'"
+
+    test.done() if fetched is 2
+
+  token.send process.env.DIFFBOT_TOKEN
+  ins.send 'http://bergie.iki.fi/blog/jolla-sailfish/'
+  ins.send 'http://bergie.iki.fi/blog/createjs-in-2013/'
