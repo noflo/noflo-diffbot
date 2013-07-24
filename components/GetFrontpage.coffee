@@ -29,8 +29,8 @@ class GetFrontpage extends noflo.AsyncComponent
     , (err, data) =>
       @outPorts.out.disconnect() if err
       return callback err if err
-      return callback data if data.statusCode is 401
-      return callback data unless data.childNodes.length
+      return callback data if data.errorCode is 401
+      return callback data unless data.childNodes and data.childNodes.length
       @outPorts.out.beginGroup url
 
       for node in data.childNodes

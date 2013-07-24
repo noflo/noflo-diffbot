@@ -18,8 +18,8 @@ exports['test reading a URL without Token'] = (test) ->
   [c, ins, token, out, err] = setupComponent()
   err.once 'data', (data) ->
     test.ok data
-    test.equal data.statusCode, 401
-    test.ok data.message
+    test.equal data.errorCode, 401
+    test.ok data.error
     test.done()
 
   ins.send 'http://bergie.iki.fi/blog/jolla-sailfish/'
