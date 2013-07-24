@@ -1,13 +1,14 @@
+---
 language: node_js
 node_js:
-  - 0.6
-  - 0.8
-
+- '0.10'
+script: npm test
+notifications:
+  irc: irc.freenode.org#fbp
 env:
   global:
-    - secure: "wdUEZAEK6wvTbAyQOT/nurD2fckFomdv/3XY3YLMhM2ZCjMT/hoi8WsHuZDu\n3J2CUlcIuFlwNJJwEEs1Zb6mpOT5aJmJaXIMsy+YLbvHiQfli8MIxygWVMoI\noNLysTAZqtkFv8NxeXdof46wknZVm2R6Ir+fmw2NI1+1iUsDxtg="
+    secure: ! 'LQGMDNNTx9ZXAuyPFUaxZ6TLM5coOaVz0+hUZN4zKDkIdf/eDUsr/SPgDrvu
 
-script: npm test
+      VlTxSyisrKpcJWXXvHnDkx+tIw3c9LLcPDv0RHHHIo9eB2M1hoOVBbkvBgan
 
-notifications:
-  irc: "irc.freenode.org#fbp"
+      xQcAS8xYPucEehjmRX7055QuhCxvbkIn2uD2Z5Rpm+E3by3wl7g='
