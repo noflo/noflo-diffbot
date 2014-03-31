@@ -44,7 +44,7 @@ exports['test reading a URL'] = (test) ->
     test.ok (validTypes.indexOf(data.type) isnt -1), "Article type must be 'article'"
 
   out.on 'disconnect', ->
-    test.ok fetched >= 9
+    test.ok fetched >= 6
     test.done()
 
   token.send process.env.DIFFBOT_TOKEN

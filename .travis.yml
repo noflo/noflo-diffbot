@@ -1,4 +1,3 @@
----
 language: node_js
 node_js:
 - '0.10'
@@ -7,8 +6,4 @@ notifications:
   irc: irc.freenode.org#fbp
 env:
   global:
-    secure: ! 'LQGMDNNTx9ZXAuyPFUaxZ6TLM5coOaVz0+hUZN4zKDkIdf/eDUsr/SPgDrvu
-
-      VlTxSyisrKpcJWXXvHnDkx+tIw3c9LLcPDv0RHHHIo9eB2M1hoOVBbkvBgan
-
-      xQcAS8xYPucEehjmRX7055QuhCxvbkIn2uD2Z5Rpm+E3by3wl7g='
+    secure: a5W3MnDVTtbXNznRIrluGMFKNaxO1Qy/sL2O8OJUkuzXPniOAzZ0ngwSDtNMdUAFfDTIL9ukyc95yWV0KnSBFXNWLxw8jtda2+jb08utnyFJJw52GgpgU331YSrZowkJGeucNhsZ70DM0JuN9Ii8SRdk5TMMlDv1EeS/qmA5qRs=
