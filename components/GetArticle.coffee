@@ -19,17 +19,21 @@ class GetArticle extends noflo.AsyncComponent
 
   doAsync: (url, callback) ->
     bot = new diffbot.Diffbot @token
+    @outPorts.out.connect()
     bot.article
       uri: url
       html: true
       stats: true
     , (err, article) =>
-      return callback err if err
-      return callback article if article.errorCode is 401
+      if err
+        @outPorts.out.disconnect()
+        return callback err
+      if article.errorCode is 401
+        @outPorts.out.disconnect()
+        return callback article
       @outPorts.out.beginGroup url
       @outPorts.out.send article
       @outPorts.out.endGroup()
-      @outPorts.out.disconnect()
       callback()
 
 exports.getComponent = -> new GetArticle

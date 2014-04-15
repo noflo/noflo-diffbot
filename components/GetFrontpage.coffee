@@ -27,17 +27,22 @@ class GetFrontpage extends noflo.AsyncComponent
       html: true
       stats: true
     , (err, data) =>
-      @outPorts.out.disconnect() if err
-      return callback err if err
-      return callback data if data.errorCode is 401
-      return callback data unless data.childNodes and data.childNodes.length
+      if err
+        @outPorts.out.disconnect()
+        return callback err
+      if data.errorCode is 401
+        @outPorts.out.disconnect()
+        return callback data
+      unless data.childNodes and data.childNodes.length
+        @outPorts.out.disconnect()
+        return callback data
+
       @outPorts.out.beginGroup url
 
       for node in data.childNodes
         @sendArticle node
 
       @outPorts.out.endGroup()
-      @outPorts.out.disconnect()
       callback()
 
   sendArticle: (node) ->

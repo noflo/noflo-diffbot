@@ -49,3 +49,4 @@ exports['test reading a URL'] = (test) ->
 
   token.send process.env.DIFFBOT_TOKEN
   ins.send 'http://bergie.iki.fi/'
+  ins.disconnect()
