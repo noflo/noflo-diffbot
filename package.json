@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "noflo": "0.5.x",
-    "diffbot": "0.1.x"
+    "diffbot": "1.0.x"
   },
   "devDependencies": {
     "nodeunit": ">=0.6.0",
     "coffeelint": "*",
-    "coffee-script": "1.4.x"
+    "coffee-script": "1.8.x"
   },
   "noflo": {
     "icon": "file-text",
