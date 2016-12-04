@@ -21,7 +21,7 @@
   "devDependencies": {
     "nodeunit": ">=0.6.0",
     "coffeelint": "*",
-    "coffee-script": "1.8.x"
+    "coffee-script": "1.12.0"
   },
   "noflo": {
     "icon": "file-text",
