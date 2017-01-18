@@ -15,13 +15,13 @@
     "node": ">=0.6.0"
   },
   "dependencies": {
-    "noflo": "0.5.x",
+    "noflo": "~0.7.9",
     "diffbot": "1.0.x"
   },
   "devDependencies": {
     "nodeunit": ">=0.6.0",
     "coffeelint": "*",
-    "coffee-script": "1.8.x"
+    "coffee-script": "~1.12.2"
   },
   "noflo": {
     "icon": "file-text",
